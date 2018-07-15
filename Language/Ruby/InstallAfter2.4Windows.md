@@ -27,13 +27,12 @@
 
 2. 分别在 mirrorlist.mingw32、mirrorlist.mingw64、mirrorlist.msys 中添加源信息到最前面的行。
 目前已知的速度较快的源如下所示。
-
   - | mirrorlist.mingw32 | 说明 |
     | - | - |
     | Server = http://mirrors.nju.edu.cn/msys2/mingw/i686 | 南京大学镜像 |
     | Server = http://mirrors.ustc.edu.cn/msys2/mingw/i686 | 中科大镜像 |
     | Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/mingw/i686 | 清华镜像 |
-    | Server = https://sourceforge.net/projects/msys2/files/REPOS/MINGW/i686 | SF镜像，速度也很快 |
+    | Server = https://sourceforge.net/projects/msys2/files/REPOS/MINGW/i686 | SF镜像 |
 
   - | mirrorlist.mingw64 |
     | - |
@@ -48,7 +47,6 @@
     | Server = http://mirrors.ustc.edu.cn/msys2/msys/$arch |
     | Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/msys/$arch |
     | Server = https://sourceforge.net/projects/msys2/files/REPOS/MSYS2/$arch/ |
-
 3. 在控制台使用 ridk install 继续安装。
 如果出现提示 Failed to init transaction (unable to lock database)，表示 pacman （msys2的包管理器）在更新数据库时被打断。
 在确保没有其他 pacman 运行的情况下（留心其他控制台），可以删除 /var/lib/pacman/db.lck 并重新运行 ridk install。
