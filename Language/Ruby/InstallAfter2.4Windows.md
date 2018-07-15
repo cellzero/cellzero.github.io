@@ -2,12 +2,13 @@
 ## 在Windows下安装Ruby 2.4.0以上版本
 
 本节介绍如何在 Windows 环境下，使用 RubyInstaller 安装 Ruby 2.4.0 以上版本。
+
 首先可以从以下网站下载 RubyInstaller。
 
-+ https://rubyinstaller.org/downloads/
++ <https://rubyinstaller.org/downloads/>
 
-从页面可以发现，官方建议安装 Ruby+DevKit 的版本。
-该版本在使用 gems 安装依赖 C 语言扩展的 Ruby 包时，能够直接对 Ruby 包进行编译，为用户带来更好的体验。
+从页面可以发现，官方建议安装 Ruby+DevKit 的版本。  
+该版本在使用 gems 安装依赖 C 语言扩展的 Ruby 包时，能够直接对 Ruby 包进行编译，为用户带来更好的体验。  
 具体来说，所谓 DevKit 是基于 [MSYS2](http://www.msys2.org/) 的开发套件（Developement Kit），
 通过在 Windows 下模拟 Linux 环境，使用 mingw-w64 等构建工具，编译所需的 C 语言扩展。
 
@@ -25,26 +26,26 @@
 2. 分别在 mirrorlist.mingw32、mirrorlist.mingw64、mirrorlist.msys 中添加源信息到最前面的行。
 目前已知的速度较快的源包括：
 
-| mirrorlist.mingw32 | 说明 |
-| - | - |
-| Server = http://mirrors.nju.edu.cn/msys2/mingw/i686 | 南京大学镜像 |
-| Server = http://mirrors.ustc.edu.cn/msys2/mingw/i686 | 中科大镜像 |
-| Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/mingw/i686 | 清华镜像 |
-| Server = https://sourceforge.net/projects/msys2/files/REPOS/MINGW/i686 | SF镜像，速度也很快 |
+  | mirrorlist.mingw32 | 说明 |
+  | - | - |
+  | Server = http://mirrors.nju.edu.cn/msys2/mingw/i686 | 南京大学镜像 |
+  | Server = http://mirrors.ustc.edu.cn/msys2/mingw/i686 | 中科大镜像 |
+  | Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/mingw/i686 | 清华镜像 |
+  | Server = https://sourceforge.net/projects/msys2/files/REPOS/MINGW/i686 | SF镜像，速度也很快 |
 
-| mirrorlist.mingw64 |
-| - |
-| Server = http://mirrors.nju.edu.cn/msys2/mingw/x86_64 |
-| Server = http://mirrors.ustc.edu.cn/msys2/mingw/x86_64 |
-| Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/mingw/x86_64 |
-| Server = https://sourceforge.net/projects/msys2/files/REPOS/MINGW/x86_64 |
+  | mirrorlist.mingw64 |
+  | - |
+  | Server = http://mirrors.nju.edu.cn/msys2/mingw/x86_64 |
+  | Server = http://mirrors.ustc.edu.cn/msys2/mingw/x86_64 |
+  | Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/mingw/x86_64 |
+  | Server = https://sourceforge.net/projects/msys2/files/REPOS/MINGW/x86_64 |
 
-| mirrorlist.msys |
-| - |
-| Server = http://mirrors.nju.edu.cn/msys2/msys/$arch |
-| Server = http://mirrors.ustc.edu.cn/msys2/msys/$arch |
-| Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/msys/$arch |
-| Server = https://sourceforge.net/projects/msys2/files/REPOS/MSYS2/$arch/ |
+  | mirrorlist.msys |
+  | - |
+  | Server = http://mirrors.nju.edu.cn/msys2/msys/$arch |
+  | Server = http://mirrors.ustc.edu.cn/msys2/msys/$arch |
+  | Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/msys/$arch |
+  | Server = https://sourceforge.net/projects/msys2/files/REPOS/MSYS2/$arch/ |
 
 3. 在控制台使用 ridk install 继续安装。
 如果出现提示 Failed to init transaction (unable to lock database)，表示 pacman （msys2的包管理器）在更新数据库时被打断。
