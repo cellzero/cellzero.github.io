@@ -28,27 +28,21 @@
 2. 分别在 mirrorlist.mingw32、mirrorlist.mingw64、mirrorlist.msys 中添加源信息到最前面的行。
 目前已知的速度较快的源如下所示。
 
-mirrorlist.mingw32：
-
-    | 链接 | 说明 |
+  - | mirrorlist.mingw32 | 说明 |
     | - | - |
     | Server = http://mirrors.nju.edu.cn/msys2/mingw/i686 | 南京大学镜像 |
     | Server = http://mirrors.ustc.edu.cn/msys2/mingw/i686 | 中科大镜像 |
     | Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/mingw/i686 | 清华镜像 |
     | Server = https://sourceforge.net/projects/msys2/files/REPOS/MINGW/i686 | SF镜像，速度也很快 |
 
-mirrorlist.mingw64：
-
-    | 链接 |
+  - | mirrorlist.mingw64 |
     | - |
     | Server = http://mirrors.nju.edu.cn/msys2/mingw/x86_64 |
     | Server = http://mirrors.ustc.edu.cn/msys2/mingw/x86_64 |
     | Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/mingw/x86_64 |
     | Server = https://sourceforge.net/projects/msys2/files/REPOS/MINGW/x86_64 |
 
-mirrorlist.msys：
-
-    | 链接 |
+  - | mirrorlist.msys |
     | - |
     | Server = http://mirrors.nju.edu.cn/msys2/msys/$arch |
     | Server = http://mirrors.ustc.edu.cn/msys2/msys/$arch |
