@@ -1,7 +1,7 @@
 # 搭建Ruby环境
 ## 在Windows下安装Ruby 2.4.0以上版本
 
-本节介绍如何在 Windows 环境下，使用 RubyInstaller 安装 Ruby 2.4.0 以上版本。
+本文介绍如何在 Windows 环境下，使用 RubyInstaller 安装 Ruby 2.4.0 以上版本。
 
 首先可以从以下网站下载 RubyInstaller。
 
