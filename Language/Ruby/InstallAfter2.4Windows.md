@@ -1,6 +1,8 @@
 # 搭建Ruby环境
 ## 在Windows下安装Ruby 2.4.0以上版本
 
+*** *** ***
+
 本文介绍如何在 Windows 环境下，使用 RubyInstaller 安装 Ruby 2.4.0 以上版本。
 
 首先可以从以下网站下载 RubyInstaller。
@@ -41,3 +43,6 @@
   | Server = http://mirrors.ustc.edu.cn/msys2/msys/$arch |
   | Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/msys/$arch |
   | Server = https://sourceforge.net/projects/msys2/files/REPOS/MSYS2/$arch/ |
+  
+*** *** ***
+###### [Back](./index)
