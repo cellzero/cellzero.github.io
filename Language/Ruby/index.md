@@ -9,6 +9,7 @@ Ruby
 
 1. [Ruby初体验](./Notes/RubyProgramming5th/ch01)
 2. [便利的对象](./Notes/RubyProgramming5th/ch02)
+3. [创建命令](./Notes/RubyProgramming5th/ch03)
 
 
 ## 遇到问题与解决方法
