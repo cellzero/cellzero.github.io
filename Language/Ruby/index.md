@@ -11,6 +11,8 @@ Ruby
 2. [便利的对象](./Notes/RubyProgramming5th/ch02)
 3. [创建命令](./Notes/RubyProgramming5th/ch03)
 4. [对象、变量和常量](./Notes/RubyProgramming5th/ch04)
+5. [条件判断](./Notes/RubyProgramming5th/ch05)
+6. [循环](./Notes/RubyProgramming5th/ch06)
 
 
 ## 遇到问题与解决方法
