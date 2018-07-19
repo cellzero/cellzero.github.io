@@ -1,7 +1,7 @@
 编号189：旋转数组
 =============================
 
-> LeetCode 189 RotateArray
+> LeetCode 189 Rotate Array
 
 *** *** ***
 
@@ -53,7 +53,7 @@
 ```javascript
 var solution = function(nums, k) {
     var step = function(nums) {
-        if (nums.length <= 1) { return nums; }
+        if (nums.length <= 1) { return; }
         var t = nums[nums.length - 1];
         for (var i = nums.length - 1; i >= 1; i--) {
             nums[i] = nums[i - 1];
@@ -61,12 +61,11 @@ var solution = function(nums, k) {
         nums[0] = t;
     };
     
-    if (nums.length <= 1 || k % nums.length == 0) { return nums; }
+    if (nums.length <= 1 || k % nums.length == 0) { return; }
     k = k % nums.length;
     for (var i = 0; i < k; i++) {
         step(nums);
     }
-    return nums;
 };
 ```
 
@@ -93,15 +92,13 @@ var solution = function(nums, k) {
 
 ```javascript
 var solution = function(nums, k) {
-    if (nums.length <= 1 || k % nums.length == 0) { return nums; }
+    if (nums.length <= 1 || k % nums.length == 0) { return; }
     
     origin = nums.slice(0);
     for (var i = 0; i < nums.length; i++ ) {
         n = (i + k) % nums.length;
         nums[n] = origin[i];
     }
-    
-    return nums;
 };
 ```
 
@@ -132,7 +129,7 @@ var solution = function(nums, k) {
 
 ```javascript
 var solution = function(nums, k) {
-    if (nums.length <= 1 || k % nums.length == 0) { return nums; }
+    if (nums.length <= 1 || k % nums.length == 0) { return; }
     
     var s = 0;        // start index
     var n = s;        // next index
@@ -150,8 +147,6 @@ var solution = function(nums, k) {
             t = nums[n];
         }
     }
-    
-    return nums;
 };
 ```
 
@@ -205,17 +200,14 @@ var solution = function(nums, k) {
             tj = ei - i - 1;
             [ns[ti], ns[tj]] = [ns[tj], ns[ti]];
         }
-        return;
     };
     
-    if (nums.length <= 1 || k % nums.length == 0) { return nums; }
+    if (nums.length <= 1 || k % nums.length == 0) { return; }
     
     k = k % nums.length;
     reverse(nums, 0, nums.length);
     reverse(nums, 0, k);
     reverse(nums, k, nums.length);
-    
-    return nums;
 };
 ```
 
@@ -238,7 +230,7 @@ var solution = function(nums, k) {
 <script id="jsSolutions" type="text/javascript">
 var solutionStep = function(nums, k) {
     var step = function(nums) {
-        if (nums.length <= 1) { return nums; }
+        if (nums.length <= 1) { return; }
         var t = nums[nums.length - 1];
         for (var i = nums.length - 1; i >= 1; i--) {
             nums[i] = nums[i - 1];
@@ -246,28 +238,25 @@ var solutionStep = function(nums, k) {
         nums[0] = t;
     };
     
-    if (nums.length <= 1 || k % nums.length == 0) { return nums; }
+    if (nums.length <= 1 || k % nums.length == 0) { return; }
     k = k % nums.length;
     for (var i = 0; i < k; i++) {
         step(nums);
     }
-    return nums;
 };
 
 var solutionCopy = function(nums, k) {
-    if (nums.length <= 1 || k % nums.length == 0) { return nums; }
+    if (nums.length <= 1 || k % nums.length == 0) { return; }
     
     origin = nums.slice(0);
     for (var i = 0; i < nums.length; i++ ) {
         n = (i + k) % nums.length;
         nums[n] = origin[i];
     }
-    
-    return nums;
 };
 
 var solutionJuggling = function(nums, k) {
-    if (nums.length <= 1 || k % nums.length == 0) { return nums; }
+    if (nums.length <= 1 || k % nums.length == 0) { return; }
     
     var s = 0;
     var n = s;
@@ -285,8 +274,6 @@ var solutionJuggling = function(nums, k) {
             t = nums[n];
         }
     }
-    
-    return nums;
 };
 
 var solutionReverse = function(nums, k) {
@@ -299,17 +286,14 @@ var solutionReverse = function(nums, k) {
             ns[ti] = ns[tj];
             ns[tj] = t;
         }
-        return;
     };
     
-    if (nums.length <= 1 || k % nums.length == 0) { return nums; }
+    if (nums.length <= 1 || k % nums.length == 0) { return; }
     
     k = k % nums.length;
     reverse(nums, 0, nums.length);
     reverse(nums, 0, k);
     reverse(nums, k, nums.length);
-    
-    return nums;
 };
 </script>
 

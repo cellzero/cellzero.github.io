@@ -4,6 +4,7 @@ LeetCode 刷题记录
 *** *** ***
 
 ### [189. 旋转数组](./189_RotateArray)
+### [217. 存在重复](./217_ContainsDuplicate)
 
 
 *** *** ***
