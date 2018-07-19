@@ -1,54 +1,46 @@
-编号217：存在重复
+编号136：只出现一次的数字
 =============================
 
-> LeetCode 217 Contains Duplicate
+> LeetCode 136 Single Number
 
 *** *** ***
 
 ## 题目
 
-给定一个整数数组，判断是否存在重复元素。
-
-如果任何值在数组中出现至少两次，函数返回 `true`。
-
-如果数组中每个元素都不相同，则返回 `false`。
+给定一个*非空*整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
 
 示例 1:
 ```
-输入: [1,2,3,1]
-输出: true
+输入: [2,2,1]
+输出: 1
 ```
 
 示例 2:
 ```
-输入: [1,2,3,4]
-输出: false
+输入: [4,1,2,1,2]
+输出: 4
 ```
 
-示例 3:
-```
-输入: [1,1,1,3,3,4,3,2,4,2]
-输出: true
-```
+#### 说明：
+
+你的算法应该具有线性时间复杂度。你可以不使用额外空间来实现吗？
 
 
 *** *** *** ***
 
-## 解法：构建散列表
+## 解法：异或操作
 
-将数组中的元素依次添加到散列表中，如果预添加元素已经出现在散列表中，则包含重复元素。
+将数组中所有元素进行异或操作，结果即为只出现了一次的元素。简单证明如下：
+
+对于数字任意数字，有 `n ^ 0 = n; n ^ n = 0;` 且异或操作满足交换律。即数组中相同的元素通过异或操作后必然为 `0`，而只出现一次的元素同 `0` 异或得到本身，即为所求结果。
 
 ```javascript
 var solution = function(nums) {
-    var h = {};
+    var t = 0;
     for (var i = 0; i < nums.length; i++) {
-        var n = nums[i];
-        if (n in h) {
-            return true;
-        }
-        h[n] = 1;
+        t ^= nums[i];
     }
-    return false;
+    return t;
 };
 ```
 
@@ -58,11 +50,17 @@ var solution = function(nums) {
 <p></p>
 <span>
 <button onclick="problemRun('solution', 'problemInput', 'problemOutput')">计算结果</button>
-<button class="problemInit" onclick="resetInput('problemInput', '[5,3,4,2,2]')">重置输入</button>
+<button class="problemInit" onclick="resetInput('problemInput', '[4,1,2,1,2]')">重置输入</button>
 </span>
 
 #### 输出
 <p id="problemOutput">NULL</p>
+
+*** *** *** ***
+
+### 相关问题
+
++ [268. 缺失数字](./268_MissingNumber)
 
 
 *** *** ***
@@ -70,15 +68,11 @@ var solution = function(nums) {
 
 <script id="jsSolutions" type="text/javascript">
 var solution = function(nums) {
-    var h = {};
+    var t = 0;
     for (var i = 0; i < nums.length; i++) {
-        var n = nums[i];
-        if (n in h) {
-            return true;
-        }
-        h[n] = 1;
+        t ^= nums[i];
     }
-    return false;
+    return t;
 };
 </script>
 
@@ -89,19 +83,38 @@ var utilIsInt = function(i) { return (typeof i === "number" && i % 1 === 0) }
 
 <script id="jsInterface" type="text/javascript">
 var parseInput = function(lines) {
+    var checkNums = function(nums) {
+        var h = {}
+        for (var i = 0; i < nums.length; i++) {
+            if (!utilIsInt(nums[i])) { return false; }
+            h[nums[i]] = (nums[i] in h) ? (h[nums[i]] + 1) : (1) ;
+        }
+        
+        var c = 0;
+        for (var i = 0; i < nums.length; i++) {
+            if (h[nums[i]] == 1) { c += 1; }
+            else if (h[nums[i]] == 2) { continue; }
+            else { return false; }
+        }
+        
+        return (c == 1) ? true : false;
+    };
+    
     if (!(lines instanceof Array && lines.length == 1)) { return false; }
     try {
         nums = eval(lines[0]);
     } catch (err) { return false; }
     if (!(nums instanceof Array)) { return false; }
-    for (var i = 0; i < nums.length; i++) { if (!utilIsInt(nums[i])) { return false; } }
+    if (!(nums.length > 0)) { return false; }
+    if (!checkNums(nums)) { return false; }
+    
     return nums;
 };
 
 var resetInput = function(inputName, inputValue) {
     var i = document.getElementById(inputName);
     i.value = inputValue;
-}
+};
 
 var formatOutput = function(result) {
     return result;
@@ -139,6 +152,6 @@ window.onload = function(){
     for (var i = 0; i < targets.length; i++) {
         targets[i].click();
     }
-}
+};
 
 </script>
