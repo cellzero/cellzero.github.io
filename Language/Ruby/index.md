@@ -13,6 +13,8 @@ Ruby
 4. [对象、变量和常量](./Notes/RubyProgramming5th/ch04)
 5. [条件判断](./Notes/RubyProgramming5th/ch05)
 6. [循环](./Notes/RubyProgramming5th/ch06)
+7. [方法](./Notes/RubyProgramming5th/ch07)
+8. [类和模块](./Notes/RubyProgramming5th/ch08)
 
 
 ## 遇到问题与解决方法
