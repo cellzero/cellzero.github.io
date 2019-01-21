@@ -20,7 +20,7 @@ Keras在保存模型结构时，会自动过滤掉同输出无关的输入。
 
 首先，列出会引发如题目所述问题的代码，以及得到的异常信息。
 
-#### 代码、输出及异常信息
+### 代码、输出及异常信息
 
 会引发异常的代码简化如下：
 
@@ -74,7 +74,7 @@ the list of Numpy arrays that you are passing to your model is not the size the 
 Expected to see 1 array(s), but instead got the following list of 2 arrays
 ```
 
-#### 修改方式
+### 修改方式
 
 只要在模型中使用input_1即可，如：
 
@@ -109,3 +109,9 @@ output = Dense(10)(hidden)
 一般来说，模型中不会出现未使用到的输入的情况（如果存在，此输入可删除）。
 该例为正在编写模型结构中，尝试调试代码时偶然发现。
 虽真实场景遇到可能极低，还是记录在此，以备查看。
+
+### 相关链接
+
+[模型结构定义错误，也会引发相同的异常](https://github.com/keras-team/keras/issues/9475)
+
+[将包含自定义Layer的模型保存到json文件中](https://github.com/keras-team/keras/issues/8612)
