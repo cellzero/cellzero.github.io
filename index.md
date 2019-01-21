@@ -11,6 +11,10 @@
 
 + [LeetCode](./ProgramProblem/LeetCode/index)
 
+## 捉虫手记
+
++ [使用Keras保存模型结构的小陷阱](./DebugNotes/KerasSaveModel)
+
 
 *** *** ***
 ###### how to write [markdown grammer](https://guides.github.com/features/mastering-markdown/)
